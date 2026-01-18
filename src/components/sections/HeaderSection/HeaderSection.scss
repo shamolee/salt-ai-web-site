@@ -1,0 +1,81 @@
+@use "@styles/variables.scss" as *;
+
+header {
+  transition: transform 0.6s ease-out;
+  transform: translateY(0);
+}
+
+// ===== STATS =====
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 0.8s ease-out 0.2s forwards;
+  visibility: visible;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stat-card {
+  background-color: #33140d;
+  border-radius: $border-radius-full;
+  opacity: 0.75;
+  padding: 1.75rem;
+  text-align: center;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: $border-accent;
+  }
+
+  .stat-number {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: $text-primary;
+    opacity: 1;
+    margin-bottom: 0.25rem;
+  }
+
+  .stat-label {
+    opacity: 1;
+    font-size: 0.9rem;
+    color: $text-muted;
+  }
+}
+
+// ===== ABSOLUTE NAV =====
+.hero-nav {
+  z-index: 100;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+@media (max-width: 900px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-top-bar {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .heading-1 {
+    font-size: 2.2rem;
+  }
+}

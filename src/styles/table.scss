@@ -1,0 +1,101 @@
+@use './variables.scss' as *;
+
+.table-container {
+    overflow-x: auto;
+    margin: 0;
+    border-radius: $border-radius-lg;
+}
+
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+
+    thead {
+
+        th {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background-color: $bg-dark; // Ensure explicit background so content doesn't show through
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            white-space: nowrap;
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+            vertical-align: middle;
+            box-shadow: 0 1px 0 $border-default; // Optional: adds a subtle border/shadow at the bottom of the sticky header
+        }
+    }
+
+    tbody {
+        tr {
+            transition: all 0.2s ease;
+
+            &:hover {
+                background: #F9FAFB;
+                transform: translateY(-1px);
+            }
+
+            &:nth-child(odd) {
+                background: $bg-dark-gray;
+            }
+
+            &:nth-child(even) {
+                background: $bg-dark;
+            }
+
+            td {
+                padding: 1rem;
+                vertical-align: middle;
+                font-size: 0.875rem;
+
+                .trend-up {
+                    color: $success-color;
+                    font-weight: bold;
+                    display: inline-block;
+                }
+
+                .trend-down {
+                    color: $danger-color;
+                    font-weight: bold;
+                    display: inline-block;
+                }
+
+                .trend-same {
+                    font-weight: bold;
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 640px) {
+    .leaderboard-section {
+        padding: 2rem 0;
+    }
+
+    .table-container {
+        border-radius: $border-radius-md;
+        margin: 0 -1rem;
+        width: calc(100% + 2rem);
+    }
+
+    .leaderboard-table {
+
+        thead th,
+        tbody td {
+            padding: 0.75rem;
+
+            &:first-child {
+                padding-left: 1rem;
+            }
+
+            &:last-child {
+                padding-right: 1rem;
+            }
+        }
+    }
+}

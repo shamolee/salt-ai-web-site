@@ -1,0 +1,52 @@
+@use './variables.scss' as *;
+@use './heading.scss' as *;
+@use './table.scss' as *;
+@use './carousel.scss' as *;
+@use './utils.scss' as *;
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+// ================= TYPOGRAPHY =================
+.heading {
+  &-1 {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.15;
+    color: $text-primary;
+    margin-bottom: 1.25rem;
+  }
+
+  &-2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1.25;
+    color: $text-primary;
+    margin-bottom: 1rem;
+  }
+
+  &-3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: $text-primary;
+  }
+}
+
+.text {
+  &-lead {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: $text-secondary;
+  }
+
+  &-muted {
+    color: $text-muted;
+  }
+
+  &-accent {
+    color: $text-accent;
+  }
+}

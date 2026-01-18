@@ -1,0 +1,14 @@
+.mp-0 {
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes scroll-infinity-horizontal {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
